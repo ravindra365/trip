@@ -4,7 +4,9 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
     }
     agent any
-    
+    tools{
+	maven 'Maven 3.8.8'
+	}
 	stages{
 		stage('Print maven version'){
 			steps{
