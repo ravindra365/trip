@@ -36,7 +36,7 @@ pipeline {
 			sh 'pwd'
 			echo 'Remove cache'
 			echo 'Starting Building Docker Image'
-			sh 'docker build -f ${workspace}/docker -t ravindra365/test:v.${BUILD_ID} .'
+			sh 'docker build -f ${WORKSPACE}/docker -t ravindra365/test:v.${BUILD_ID} .'
 			echo 'Completed  Building Docker Image'
 			
 			}
