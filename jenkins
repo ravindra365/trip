@@ -5,7 +5,7 @@ pipeline {
     }
     agent any
     tools{
-	maven 'Maven 3.8.8'
+	maven '/opt/apache-maven-3.8.8'
 	}
 	stages{
 		stage('Print maven version'){
