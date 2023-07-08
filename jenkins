@@ -35,8 +35,6 @@ pipeline {
 			sh 'docker --version'
 			sh 'pwd'
 			echo 'Remove cache'
-			sh 'docker build -f /opt/Dockerfile --no-cache -t image-name .'
-			sh 'docker system prune -a --volumes'
 			echo 'Starting Building Docker Image'
 			sh 'docker build -f /opt/Dockerfile -t ravindra365/test:v.${BUILD_ID} .'
 			echo 'Completed  Building Docker Image'
