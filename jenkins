@@ -1,12 +1,9 @@
 pipeline {
-    agent any  //Agent name to declare
-
+    agent any
     stages {
-        stage('Test') {
+        stage('Example') {
             steps {
-                
-                sh 'make check || true'
-                junit '**/v-0.1/*.war'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
     }
