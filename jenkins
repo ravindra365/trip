@@ -35,12 +35,20 @@ pipeline {
 			sh 'docker --version'
 			sh 'pwd'
 			echo 'Starting Building Docker Image'
-			sh 'docker build -f /opt/Dockerfile -t ravindra365/test1 .'
-			sh 'docker build -f /opt/Dockerfile -t test1 .'
+			sh 'docker build -f /opt/Dockerfile -t ravindra365/test1:v.${env.BUILD_ID} .'
+			#sh 'docker build -f /opt/Dockerfile -t test1 .'
 			echo 'Completed  Building Docker Image'
 			
 			}
 		}
+		
+		stage('Docker Image Scanning') {
+            steps {
+                echo 'Docker Image Scanning Started'
+                sh 'java -version'
+                echo 'Docker Image Scanning Started'
+            }
+        }
 	}
 		
 }
