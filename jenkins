@@ -33,6 +33,7 @@ pipeline {
 		stage('Building Docker version'){
 		steps{
 			sh 'docker --version'
+			sh 'pwd'
 			echo 'Starting Building Docker Image'
 			sh 'docker build -t ravindra365/test1 .'
 			sh 'docker build -t test1 .'
