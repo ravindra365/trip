@@ -1,10 +1,14 @@
 pipeline {
+	// Keeps only 5 build
+	options {
+        buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))
+    }
     agent any
-    stages {
-        stage('Example') {
-            steps {
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-            }
-        }
+    
+	stage('Print maven version'){
+	steps{
+	sh 'mvn -version'
+	}
+	 
     }
 }
