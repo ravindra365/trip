@@ -35,8 +35,8 @@ pipeline {
 			sh 'docker --version'
 			sh 'pwd'
 			echo 'Starting Building Docker Image'
-			sh 'docker build -t ravindra365/test1 .'
-			sh 'docker build -t test1 .'
+			sh 'docker build -t ravindra365/test1 /opt/Dockerfile'
+			sh 'docker build -t test1 /opt/Dockerfile'
 			echo 'Completed  Building Docker Image'
 			
 			}
