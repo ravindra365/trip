@@ -1,0 +1,13 @@
+pipeline {
+    agent any  //Agent name to declare
+
+    stages {
+        stage('Test') {
+            steps {
+                
+                sh 'make check || true'
+                junit '**/v-0.1/*.war'
+            }
+        }
+    }
+}
