@@ -5,10 +5,12 @@ pipeline {
     }
     agent any
     
-	stage('Print maven version'){
-	steps{
-	sh 'mvn -version'
-	}
+	stages{
+		stage('Print maven version'){
+			steps{
+				sh 'mvn -version'
+				}
+									}		
 	 
-    }
+		}
 }
