@@ -20,7 +20,22 @@ pipeline {
 			steps{
 			sh 'mvn clean compile'
 			}	
-		}	
+		}
+
+		stage('Code package using maven'){
+			steps{
+			echo 'code packing is starting'
+			sh 'mvn clean package'
+			echo 'code packing is completed'
+			}
+		}
+
+		stage('Building Docker version'){
+		steps{
+			sh 'docker --version'
+			
+			}
+		}
 	}
 		
 }
