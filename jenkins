@@ -36,7 +36,8 @@ pipeline {
 			sh 'pwd'
 			echo 'Remove cache'
 			echo 'Starting Building Docker Image'
-			sh 'docker build -f ${WORKSPACE}/docker -t ravindra365/test:v.${BUILD_ID} .'
+			sh 'docker build -f ${WORKSPACE}/docker -t ravindra365/2023 .'
+			sh 'docker build -t 2023 .'
 			echo 'Completed  Building Docker Image'
 			
 			}
@@ -56,7 +57,7 @@ pipeline {
                  withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
                  sh 'docker login docker.io -u ravindra365 -p ${dockerhubCred}'
                  echo "Push Docker Image to DockerHub : In Progress"
-                 sh 'docker push ravindra365/test:v.${BUILD_ID}'
+                 sh 'docker push ravindra365/2023:latest'
                  echo "Push Docker Image to DockerHub : In Progress"
                  sh 'whoami'
                  }
