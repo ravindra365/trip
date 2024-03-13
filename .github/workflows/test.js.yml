@@ -1,18 +1,23 @@
-name: Node.js CI
+name: Checkout and Upload Artifacts
 
-on: [push]
+on:
+  push:
+    branches:
+      - main  # Adjust to your main branch name
+  pull_request:
 
 jobs:
-  build:
-
+  build-and-upload:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-      - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    # Here you can add steps to build/test your code
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact  # Change to a descriptive name for your artifact
+        path: ${{ github.workspace }}  # Use the current working directory as the path
