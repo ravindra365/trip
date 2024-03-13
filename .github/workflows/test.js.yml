@@ -3,7 +3,7 @@ name: Checkout and Upload Artifacts
 on:
   push:
     branches:
-      - main  # Adjust to your main branch name
+      - main  
   pull_request:
 
 jobs:
@@ -14,10 +14,8 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    # Here you can add steps to build/test your code
-
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: my-artifact  # Change to a descriptive name for your artifact
+        name: checkout-artifact  # Change to a descriptive name for your artifact
         path: ${{ github.workspace }}/src/  # Use the current working directory as the path
