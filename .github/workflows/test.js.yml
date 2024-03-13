@@ -18,4 +18,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: checkout-artifact  # Change to a descriptive name for your artifact
-        path: ${{ github.workspace }}/src/  # Use the current working directory as the path
+        path: ${{ github.workspace }}/sr*/  # Use the current working directory as the path
