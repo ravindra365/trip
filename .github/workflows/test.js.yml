@@ -17,5 +17,5 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: checkout-artifact  # Change to a descriptive name for your artifact
-        path: ${{ github.workspace }}/sr*/  # Use the current working directory as the path
+        name: trip-artifact  # Change tname for your artifact
+        path: ${{ github.workspace }}/src/  # get current working directory as the path
