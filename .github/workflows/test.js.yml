@@ -23,9 +23,9 @@ jobs:
         path: ${{ github.workspace }}/src/  # get current working directory as the path
     
     - name: Upload Folders2
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: my-artifact
         path: |
-          ${{ github.workspace }}/main
-          ${{ github.workspace }}/jenkins
+          - ${{ github.workspace }}/main
+          - ${{ github.workspace }}/jenkins
