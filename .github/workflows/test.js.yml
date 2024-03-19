@@ -13,6 +13,13 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
+    - name: Rename folders
+      run: |
+        mkdir test
+        ls -lrt
+        cp -r src/main test/
+        cp -r src/test test/
+      working-directory: ${{ github.workspace }}
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
