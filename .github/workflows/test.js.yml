@@ -28,4 +28,4 @@ jobs:
         name: my-artifact
         path: |
           ${{ github.workspace }}/main
-          ${{ github.workspace }}/src
+          ${{ github.workspace }}/jenkins
