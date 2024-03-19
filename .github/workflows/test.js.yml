@@ -21,3 +21,11 @@ jobs:
       with:
         name: trip-artifact  # Change tname for your artifact
         path: ${{ github.workspace }}/src/  # get current working directory as the path
+    
+    - name: Upload Folders2
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: |
+          ${{ github.workspace }}/main
+          ${{ github.workspace }}/src
