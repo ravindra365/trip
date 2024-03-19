@@ -11,16 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
-    - name: list
-      run: ls -lrt
+    - name: Rename folders
+      run: |
+        mkdir test
+        cp -r .github test/
+        cp src test/
+      working-directory: ${{ github.workspace }}
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
         name: trip-artifact  # Change tname for your artifact
-        path: ${{ github.workspace }}/src/  # get current working directory as the path
+        path: ${{ github.workspace }}/test/  # get current working directory as the path
     
     - name: Upload Folders2
       uses: actions/upload-artifact@v3
