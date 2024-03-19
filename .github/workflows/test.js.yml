@@ -14,8 +14,9 @@ jobs:
     - name: Rename folders
       run: |
         mkdir test
-        cp -r /src/main test/
-        cp -r /src/test test/
+        ls -lrt
+        cp -r src/main test/
+        cp -r src/test test/
       working-directory: ${{ github.workspace }}
 
     - name: Upload Artifacts
