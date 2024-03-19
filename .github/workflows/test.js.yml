@@ -19,6 +19,8 @@ jobs:
         ls -lrt
         cp -r src/main test/
         cp -r src/test test/
+        cd test
+        ls -lrt
       working-directory: ${{ github.workspace }}
 
     - name: Upload Artifacts
