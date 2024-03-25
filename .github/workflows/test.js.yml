@@ -38,4 +38,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: trip-artifact  # Change tname for your artifact
-        path: ${{ github.workspace }}/test/  # get current working directory as the path
+        path: ${{ github.workspace }}/allure-report/  # get current working directory as the path
