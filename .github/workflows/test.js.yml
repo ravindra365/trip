@@ -24,6 +24,8 @@ jobs:
         cd test/main
         ls -lrt
       working-directory: ${{ github.workspace }}
+    - name: Allure run
+      run: allure generate allure-results --clean -o allure-report
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
