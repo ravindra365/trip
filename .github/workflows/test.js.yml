@@ -14,7 +14,7 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
     - name: Build Number
-      run: echo $BUILD_NUMBER
+      run: echo ${{ GITHUB_RUN_ID }}
     - name: Rename folders
       run: |
         mkdir test
