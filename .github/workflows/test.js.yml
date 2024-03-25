@@ -32,7 +32,7 @@ jobs:
        pwd
        ls -lrt
        cd ${{ github.workspace }}/allure-report/
-       ls-lrt
+       ls -lrt
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
