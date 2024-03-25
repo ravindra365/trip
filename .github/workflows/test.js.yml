@@ -34,21 +34,21 @@ jobs:
        cd ${{ github.workspace }}/allure-report/
        ls -lrt
     - name: Get Allure history
-        uses: actions/checkout@v2
-        if: always()
-        continue-on-error: true
-        with:
+       uses:actions/checkout@v2
+      if: always()
+      continue-on-error: true
+      with:
             ref: gh-pages
             path: gh-pages
-      - name: checkallurefolder
-        run:  pwd; ls -lrt; cd ${{ github.workspace }}/gh-pages/; ls -lrt;  
-      - name: Allure Report action from marketplace
-        uses: simple-elf/allure-report-action@master
-        if: always()
-        with:
-          allure_results: allure-results
-          allure_history: allure-history
-          keep_reports: 1
+    - name: checkallurefolder
+      run:  pwd; ls -lrt; cd ${{ github.workspace }}/gh-pages/; ls -lrt;  
+    - name: Allure Report action from marketplace
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      with:
+        allure_results: allure-results
+        allure_history: allure-history
+        keep_reports: 1
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
